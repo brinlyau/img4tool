@@ -4,13 +4,13 @@
 
 CC = gcc
 CFLAGS = -Wall -W -pedantic
-CFLAGS += -std=c99 -Wno-variadic-macros -Wno-multichar -Wno-four-char-constants
+CFLAGS += -std=c99 -Wno-variadic-macros -Wno-multichar -Wno-four-char-constants -I/usr/local/opt/openssl/include -L/usr/local/opt/openssl/lib
 CFLAGS += -O2 -m64 -I. -g -DiOS10 -Ilzfse/src
 CFLAGS += -DDER_MULTIBYTE_TAGS=1 -DDER_TAG_SIZE=8
 CFLAGS += -D__unused="__attribute__((unused))"
 
 LD = gcc
-LDFLAGS = -m64 -g -Llzfse/build/bin
+LDFLAGS = -m64 -g -Llzfse/build/bin -I/usr/local/opt/openssl/include -L/usr/local/opt/openssl/lib
 LDLIBS = -llzfse
 
 SOURCES = \
